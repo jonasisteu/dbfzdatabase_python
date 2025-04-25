@@ -1,0 +1,11 @@
+<h1 class="text-center text-4xl">{{character?.name}}</h1>
+<div class="flex flex-col md:flex-row justify-center">
+    <img src="{{character?.splash_art_url}}" alt="{{character?.name}} splash art" class="w-3xs md:w-2xs">
+    <div class="content-center">
+        <ul class="text-nowrap text-xs md:text-lg">
+            <li>Archétype : {{character?.archetype}}</li>
+            <li>Saison d'origine : {{character?.season}}</li>
+            <li>Série d'origine : {{character?.origin_series}}</li>
+        </ul>
+    </div>
+</div>

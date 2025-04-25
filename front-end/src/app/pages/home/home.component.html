@@ -1,0 +1,9 @@
+<h1 class="text-center text-3xl">Personnages</h1>
+<br>
+<ul class="flex flex-wrap justify-center">
+    <li *ngFor="let character of characters">
+        <a [routerLink]="['/characters', character.reference]">
+            <img src="{{character.thumbnail}}" alt="{{character.name}} image" class="w-36 hover:w-40">
+        </a>
+    </li>
+</ul>
