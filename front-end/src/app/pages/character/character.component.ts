@@ -12,16 +12,15 @@ import { Title } from '@angular/platform-browser';
 })
 export class CharacterComponent implements OnInit {
   private route = inject(ActivatedRoute);
-  characterService = inject(CharacterService);
+  character: Character | null = null; 
   private titleService = inject(Title);
-  character: Character | undefined;
-  reference: string = '';
   
   ngOnInit(): void {
-    this.reference = this.route.snapshot.params['reference'];
-    this.characterService.getCharacter(this.reference).subscribe(data => {
-      this.character = data;
-      this.titleService.setTitle(data.name);
-    });
+    this.route.data.subscribe(({ character }) => {
+      this.character = character;
+      if (this.character !== null) {
+        this.titleService.setTitle(this.character.name)
+      }
+    })
   }
 }

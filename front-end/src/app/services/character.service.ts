@@ -12,10 +12,10 @@ export class CharacterService {
 
 
   getCharacter(reference: string): Observable<Character> {
-    return this.http.get<Character>(`${this.url}/search/${reference}?`);
+    return this.http.get<Character>(`${this.url}/search/${reference}`);
   }
 
   getAllCharacters(): Observable<Character[]> {
-    return this.http.get<Character[]>(`${this.url}?`);
+    return this.http.get<Character[]>(`${this.url}`);
   }
 }
